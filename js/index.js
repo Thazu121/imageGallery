@@ -44,3 +44,4 @@ prev.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + image.length) % image.length;
   updateSlider();
 });
+

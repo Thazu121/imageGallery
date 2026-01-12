@@ -1,53 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;   
+  align-items: center;
   background: #f4f4f4;
 }
 
+/* Main gallery */
 #gallery {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
-img {
+/* Image + dots + mobile buttons */
+.image-box {
+  text-align: center;
+}
+
+/* Slider image */
+#img {
   width: 100%;
   max-width: 500px;
-  height: auto;          
-  object-fit: cover;
+  height: auto;
   border-radius: 8px;
   border: 2px solid #333;
+  object-fit: cover;
 }
 
-button {
+/* Desktop buttons */
+#prev,
+#next {
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 10px 16px;
   border: none;
   background-color: #333;
   color: white;
   border-radius: 5px;
+  font-size: 14px;
 }
 
-button:hover {
+#prev:hover,
+#next:hover {
   background-color: #555;
 }
+
+/* Dots */
 #dots {
-  text-align: center;
   margin-top: 10px;
 }
 
 .dot {
-  height: 12px;
   width: 12px;
-  margin: 0 5px;
+  height: 12px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
+  margin: 0 5px;
   cursor: pointer;
 }
 
@@ -55,8 +70,20 @@ button:hover {
   background-color: #333;
 }
 
+/* 📱 MOBILE LAYOUT */
 @media (max-width: 768px) {
   #gallery {
     flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Move buttons down */
+  #prev,
+  #next {
+    order: 3;
+  }
+
+  #img {
+    max-width: 90vw;
   }
 }
